@@ -2,6 +2,10 @@
 WSDM - KKBox's Music Recommendation Challenge
 
 
-`Report_MusicRecommender.ipynb` is the main notebook.
-`Data_Cleaning.ipyn` is notebook for data cleaning.
-Both notebooks have html file.
+### Contents
+* `Report_MusicRecommender.ipynb`: main notebook
+* `Data_Cleaning.ipyn`: notebook for data cleaning
+
+* `Report_MusicRecommender.html`: html of main notebook
+* `Data_Cleaning.html`: html of notebook for data cleaning
+
