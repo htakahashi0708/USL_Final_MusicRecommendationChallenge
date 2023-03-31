@@ -14014,7 +14014,7 @@ a.anchor-link {
 <h3 id="1.4-Target">1.4 Target<a class="anchor-link" href="#1.4-Target">&#182;</a></h3><p>The target of this project is <strong>auc &gt; 0.66</strong> considering bench mark score and my RandomForest results.</p>
 <ul>
 <li>KKBox Benchmark: auc 0.61337</li>
-<li>My RandomForestClassifier with mean encoding of categorical features: auc 0.653</li>
+<li>My RandomForestClassifier: auc 0.65998 (refer to another notebook <code>Appendix_RandomForest.ipynb</code>)</li>
 </ul>
 <p>This project has generally low scores in kaggle leaderboard. auc 0.7 is top 50 of 1000 partcipants.</p>
 
@@ -17309,7 +17309,7 @@ calculation time  26.0 sec
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="7.-Conclusion">7. Conclusion<a class="anchor-link" href="#7.-Conclusion">&#182;</a></h1><p>This hybrid system which consists of <strong>feature only content-based</strong>, <strong>item bias</strong>, <strong>user bias</strong>, and <strong>SVD</strong> worked successfully and achieved my target (auc &gt; 0.66).</p>
+<h1 id="7.-Conclusion">7. Conclusion<a class="anchor-link" href="#7.-Conclusion">&#182;</a></h1><p>This hybrid system which consists of <strong>feature only content-based</strong>, <strong>item bias</strong>, <strong>user bias</strong>, and <strong>SVD</strong> worked successfully and achieved my target (<strong>auc &gt; 0.66</strong>).</p>
 <p>In this project, the main problem was data size and memory usage which attribute to large number of unique items and users. Howeber, I noticed that it is unncessesary to create rating matrix of whole users and items, because SVD does not work well for rate items (<strong>cold start problem</strong>). Thus, I decided to combine SVD with content-based approach which fairly works for new items when some features are available.</p>
 <p>Another finding is efficiency of SVD in <code>surprise</code> packages. Generally, svds in popular packages such as <code>numpy</code> and <code>sklearn</code> requires imputation of NaN values, and this operation blurs features. However, according to the paper[1] which reffered by <code>surprise</code>, this SVD mask our unrated item-user pairs by  $R_{i,j}$ for calculating loss. I guess that <code>surprise</code> calculte latent features without creating rating matrix. Parhaps that's why the memory usage is much smaller than conventional svds, and better in performance.</p>
 
